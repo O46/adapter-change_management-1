@@ -9,7 +9,7 @@
     "operator"
   ],
   "methods": [
-{
+    {
   "name": "getRecord",
   "summary": "Get Change Tickets",
   "description": "Get the first ServiceNow change management ticket.",
@@ -25,31 +25,37 @@
         "$ref": "changeRequest#/definitions/changeTicket"
       }
     }
-  }
- },
-  
-  {
-		"name":"postRecord",
-		"summary":"Create Change Tickets",
-		"description":"Create ServiceNow change management ticket.",
-		"input":[
-
-		],
-		"output":{
-			"name":"changeTickets",
-			"type":"object",
-			"description":"A change management ticket document.",
-			"schema":{
-				"type":"object",
-				"items":{
-					"title":"changeTicket",
-					"$ref":"changeRequest#/definitions/changeTicket"
-				}
-			}
-		}
-	} 
-	],
- 
+  },
+  "roles": [
+    "admin",
+    "engineer",
+    "operator"
+  ],
   "task": true
-  
+},
+{
+    "name": "postRecord",
+    "summary": "Create Change Tickets",
+    "description": "Create ServiceNow change management ticket.",
+    "input": [],
+    "output": {
+        "name": "changeTickets",
+        "type": "object",
+        "description": "A change management ticket document.",
+        "schema": {
+            "type": "object",
+            "items": {
+                "title": "changeTicket",
+                "$ref": "changeRequest#/definitions/changeTicket"
+            }
+        }
+  }, 
+  "roles": [
+    "admin",
+    "engineer",
+    "operator"
+  ],
+  "task": true
+}
+  ]
 }

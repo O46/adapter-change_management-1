@@ -189,14 +189,14 @@ class ServiceNowAdapter extends EventEmitter {
    * @param {ServiceNowAdapter~requestCallback} callback - The callback that
    *   handles the response.
    */
-  getRecord(callback) {
+ getRecord(callback) {
     /**
      * Write the body for this function.
      * The function is a wrapper for this.connector's get() method.
      * Note how the object was instantiated in the constructor().
      * get() takes a callback function.
      */
-     ServiceNowConnector.get(callback);
+     this.ServiceNowConnector.get(callback);
   }
 
   /**
@@ -215,7 +215,7 @@ class ServiceNowAdapter extends EventEmitter {
      * Note how the object was instantiated in the constructor().
      * post() takes a callback function.
      */
-     ServiceNowConnector.post(callback);
+     this.ServiceNowConnector.post(callback);
   }
 }
 
